@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="main">
+	<div class="summary-container">
+		<div id="white-summary" class="summary-item col-md-3 col-sm-4 col-xs-12">
+			<div>
+				<span class="summary-number">125,002</span>
+				<span class="summary-label">Total Clusters</span>
+			</div>
+		</div>
+		<div id="red-summary" class="summary-item col-md-3 col-sm-4 col-xs-12">
+			<div>
+				<span class="summary-number">125,002</span>
+				<span class="summary-label">Code Red</span>
+			</div>
+		</div>
+		<div id="orange-summary" class="summary-item col-md-3 col-sm-4 col-xs-12">
+			<div>
+				<span class="summary-number">125,002</span>
+				<span class="summary-label">Code Orange</span>
+			</div>
+		</div>
+		<div id="yellow-summary" class="summary-item col-md-3 col-sm-4 col-xs-12">
+			<div>
+				<span class="summary-number">125,002</span>
+				<span class="summary-label">Code Yellow</span>
+			</div>
+		</div>
+	</div>
+	<div class="table-container">
+		<ul class="nav main-nav-tabs nav-tabs">
+	        <li class="active">
+	            <a href="#tableTab" class="tab-item" data-toggle="tab">Table</a>
+	        </li>
+	        <li>
+	            <a href="#mapTab" class="tab-item" data-toggle="tab">Map</a>
+	        </li>
+	        <div class="table-button-container">
+	        	<div class="btn-group">
+	        		<button class="btn add-user-btn" id="add-household-btn" data-toggle="modal" data-target="#add-household-modal"><i class="material-icons md-30">add</i></button>
+		            <button id="search-btn" onclick="toggle_search()" class="table-btn btn"><span class="glyphicon glyphicon-search"></span></button>
+		            <button id="refresh-btn" class="table-btn btn" onclick="back_home()"><span class="glyphicon glyphicon-repeat"></span></button>
+	            </div>
+            </div>       
+	    </ul>
+	    <div class="tab-content">
+			<div class="tab-pane active" id="tableTab">
+				<table id="householdTable" class="table">
+					<thead>
+						<tr>
+							<th>Household</th>
+							<th>Cluster</th>
+							<th>Barangay</th>
+							<th>City</th>
+							<th>Province/State</th>
+							<th>Region</th>
+							<th>Members</th>
+							<th>Status</th>
+						</tr>
+						<tr id="households-search-panel" class="search-panel">	
+							<td><input type="text" id="log_search_date" class="form-control search-text search-households"></td>
+							<td><input type="text" id="log_search_date" class="form-control search-text search-households"></td>
+							<td><input type="text" id="log_search_date" class="form-control search-text search-households"></td>
+							<td><input type="text" id="log_search_date" class="form-control search-text search-households"></td>
+							<td><input type="text" id="log_search_date" class="form-control search-text search-households"></td>
+							<td><input type="text" id="log_search_date" class="form-control search-text search-households"></td>
+							<td><input type="text" id="log_search_date" class="form-control search-text search-households"></td>
+							<td><input type="text" id="log_search_date" class="form-control search-text search-households"></td>
+						</tr>
+					</thead>
+					<tbody id="households">
+						{% for household in households %}
+						<tr id="{{ household.id }}" data-toggle="modal" data-target="#edit-household-modal" onclick="supply_household_data(this.id)">
+							<td>{{ household.name }}</td>
+							<td>{{ household.cluster }}</td>
+							<td>{{ household.barangay }}</td>
+							<td>{{ household.city }}</td>
+							<td>{{ household.province }}</td>
+							<td>{{ household.region }}</td>
+							<td>{{ household.number_of_members }}</td>
+							<td>{{ household.status }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<div class="tab-pane" id="mapTab">
+				<div id='map' style='width: 100%; height: 500px;'></div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

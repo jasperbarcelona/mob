@@ -1,0 +1,60 @@
+<span class="form-title">Household Information</span>
+<div class="add-household-row col-xs-12">
+    <div class="add-household-input-container left col-sm-6 col-xs-12">
+        <input type="text" id="add-household-name" class="form-control" placeholder="Household Name" value="{{ household.name }}">
+    </div>
+    <div class="add-household-input-container right col-sm-6 col-xs-12">
+        <input type="text" id="add-household-cluster" class="form-control" placeholder="Cluster" value="{{ household.cluster }}">
+    </div>
+</div>
+<div class="add-household-row col-xs-12">
+    <div class="add-household-input-container left col-sm-6 col-xs-12">
+        <input type="text" id="add-household-barangay" class="form-control" placeholder="Barangay" value="{{ household.barangay }}">
+    </div>
+    <div class="add-household-input-container right col-sm-6 col-xs-12">
+        <input type="text" id="add-household-city" class="form-control" placeholder="City" value="{{ household.city }}">
+    </div>
+</div>
+<div class="add-household-row col-xs-12">
+    <div class="add-household-input-container left col-sm-6 col-xs-12">
+        <input type="text" id="add-household-province" class="form-control" placeholder="Province" value="{{ household.province }}">
+    </div>
+    <div class="add-household-input-container right col-sm-6 col-xs-12">
+        <input type="text" id="add-household-region" class="form-control" placeholder="Region" value="{{ household.region }}">
+    </div>
+</div>
+<div class="add-household-row col-xs-12">
+    <div class="add-household-input-container col-xs-12">
+        <input type="text" id="add-household-address" class="form-control" placeholder="Street Address" value="{{ household.address }}">
+    </div>
+</div>
+<div class="add-household-row col-xs-12">
+    <div class="add-household-input-container no-bottom-padding col-xs-12">
+        <select id="add-household-status" class="form-control">
+            <option selected>{{ household.status }}</option>
+            <option class="green">Green</option>
+            <option class="yellow">Yellow</option>
+            <option class="orange">Orange</option>
+            <option class="red">Red</option>
+        </select>
+    </div>
+</div>
+<span class="form-title with-break">Remarks</span>
+<div class="add-household-row col-xs-12">
+    <div class="add-household-input-container no-bottom-padding col-xs-12">
+        <textarea id="add-household-remarks" class="form-control"></textarea>
+    </div>
+</div>
+
+<span class="form-title with-break">Images</span>
+<div class="household-images-container">
+    {% for image in images %}
+    <img class="household-image" src="{{ image.path }}">
+    {% endfor %}
+    <div class="add-household-image"><i class="material-icons">&#xE439;</i><span>Add Image</span></div>
+</div>
+
+<span class="form-title with-break">Members</span>
+<div class="household-members-container">
+    <div class="add-household-member"><i class="material-icons">&#xE7FE;</i><span>Add Member</span></div>
+</div>

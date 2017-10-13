@@ -1,0 +1,72 @@
+<div class="modal fade" id="add-household-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="gridSystemModalLabel">New Household</h4>
+            </div>
+            <div class="modal-body">
+                <span class="form-title">Household Information</span>
+                <div class="add-household-row col-xs-12">
+                    <div class="add-household-input-container left col-sm-6 col-xs-12">
+                        <input type="text" id="add-household-name" class="form-control" placeholder="Household Name">
+                    </div>
+                    <div class="add-household-input-container right col-sm-6 col-xs-12">
+                        <input type="text" id="add-household-cluster" class="form-control" placeholder="Cluster">
+                    </div>
+                </div>
+                <div class="add-household-row col-xs-12">
+                    <div class="add-household-input-container left col-sm-6 col-xs-12">
+                        <input type="text" id="add-household-barangay" class="form-control" placeholder="Barangay">
+                    </div>
+                    <div class="add-household-input-container right col-sm-6 col-xs-12">
+                        <input type="text" id="add-household-city" class="form-control" placeholder="City">
+                    </div>
+                </div>
+                <div class="add-household-row col-xs-12">
+                    <div class="add-household-input-container left col-sm-6 col-xs-12">
+                        <input type="text" id="add-household-province" class="form-control" placeholder="Province">
+                    </div>
+                    <div class="add-household-input-container right col-sm-6 col-xs-12">
+                        <input type="text" id="add-household-region" class="form-control" placeholder="Region">
+                    </div>
+                </div>
+                <div class="add-household-row col-xs-12">
+                    <div class="add-household-input-container no-bottom-padding col-xs-12">
+                        <input type="text" id="add-household-address" class="form-control" placeholder="Street Address">
+                    </div>
+                </div>
+
+                <span class="form-title with-break">Images</span>
+                <div class="household-images-container">
+                    <!-- <img class="household-image" src="../static/images/households/invite.png">
+                    <img class="household-image" src="../static/images/households/test.jpg"> -->
+                    <div class="add-household-image"><i class="material-icons">&#xE439;</i><span>Add Image</span></div>
+                </div>
+
+                <span class="form-title with-break">Members</span>
+                <div class="household-members-container">
+                    <div class="add-household-member"><i class="material-icons">&#xE7FE;</i><span>Add Member</span></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger cancel-btn" data-dismiss="modal">Close</button>
+                <button id="saveHouseholdBtn" type="button" class="btn btn-primary done-btn" disabled>Send</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="edit-household-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="gridSystemModalLabel"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger cancel-btn" data-dismiss="modal">Close</button>
+                <button id="saveHouseholdBtn" type="button" class="btn btn-primary done-btn" disabled>Send</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
